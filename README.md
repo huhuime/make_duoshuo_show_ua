@@ -1,18 +1,18 @@
 #Make DUOSHUO Show UA
-> °æ±¾£º0.1<br>
-> ·´À¡£ºhttp://jibushengdan.tk/make_duoshuo_show_ua.jbsd
+> ç‰ˆæœ¬ï¼š0.1<br>
+> åé¦ˆï¼šhttp://jibushengdan.tk/make_duoshuo_show_ua.jbsd
 
-##¼ò½é
-> ×ÖÃæÒâË¼£ºÊ¹¶àËµÆÀÂÛÏÔÊ¾ua<br>
-> ´úÂë½ö20ĞĞ<br>
-> ¸Ã´úÂëÒÀÀµua-parser½âÎöua£¬µØÖ·£ºhttps://github.com/faisalman/ua-parser-js
+##ç®€ä»‹
+> å­—é¢æ„æ€ï¼šä½¿å¤šè¯´è¯„è®ºæ˜¾ç¤ºua<br>
+> ä»£ç ä»…20è¡Œ<br>
+> è¯¥ä»£ç ä¾èµ–ua-parserè§£æuaï¼Œåœ°å€ï¼šhttps://github.com/faisalman/ua-parser-js
 
-##Ê¹ÓÃ
-> ¼ûtest.html<br>
-> Èç×Ô¶¨ÒåÏÔÊ¾ÑÕÉ«cssÇë¼Ó.this_ua.platform.Ïà¹ØÃû³Æ£¨×¢Òâ´óĞ¡Ğ´£©
+##ä½¿ç”¨
+> è§test.html<br>
+> å¦‚è‡ªå®šä¹‰æ˜¾ç¤ºé¢œè‰²cssè¯·åŠ .this_ua.platform.ç›¸å…³åç§°ï¼ˆæ³¨æ„å¤§å°å†™ï¼‰
 
-##½¨Òé
-> Èç¹û²»ÖªµÀ½«ÒÔÏÂ´úÂë·ÅÔÚºÎ´¦Äã¿ÉÒÔ¿¼ÂÇ·ÅÔÚÎÄÕÂ½ÚµãÄ©Î²
+##å»ºè®®
+> å¦‚æœä¸çŸ¥é“å°†ä»¥ä¸‹ä»£ç æ”¾åœ¨ä½•å¤„ä½ å¯ä»¥è€ƒè™‘æ”¾åœ¨æ–‡ç« èŠ‚ç‚¹æœ«å°¾
 
 		<script type="text/javascript">
 		if (typeof DUOSHUO !== 'undefined')hookDUOSHUO_tp();
@@ -21,7 +21,8 @@
 			var _D_post=DUOSHUO.templates.post
 			DUOSHUO.templates.post=function (e,t){
 				var rs=_D_post(e,t);
-				if(e.agent&&/^Mozilla/.test(e.agent))rs=rs.replace(/<\/div><p>/,show_ua(e.agent)+'</div><p>');
+				var agent=e.post.agent;
+				if(agent&&/^Mozilla/.test(agent))rs=rs.replace(/<\/div><p>/,show_ua(agent)+'</div><p>');
 				return rs;
 			}
 		}
@@ -34,7 +35,7 @@
 		}
 		</script>
 
-###ÎŞË¢ĞÂ¼ÓÔØµÄÇëÊ¹ÓÃÏÂÃæ´úÂë
+###æ— åˆ·æ–°åŠ è½½çš„è¯·ä½¿ç”¨ä¸‹é¢ä»£ç 
 		<script type="text/javascript">
 		if (typeof DUOSHUO !== 'undefined')hookDUOSHUO_tp();
 		else $('[src="http://static.duoshuo.com/embed.js"]')[0].onload=hookDUOSHUO_tp;
@@ -45,7 +46,8 @@
 			var _D_post=DUOSHUO.templates.post;
 			DUOSHUO.templates.post=function (e,t){
 				var rs=_D_post(e,t);
-				if(e.agent&&/^Mozilla/.test(e.agent))rs=rs.replace(/<\/div><p>/,show_ua(e.agent)+'</div><p>');
+			var agent=e.post.agent;
+				if(agent&&/^Mozilla/.test(agent))rs=rs.replace(/<\/div><p>/,show_ua(agent)+'</div><p>');
 				return rs;
 			}
 		}

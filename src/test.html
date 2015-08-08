@@ -1,8 +1,8 @@
-<!--ÒÔÏÂÁ½ÐÐ´úÂë½¨Òé·ÅÈëheadÀï-->
-<script src="ua-parser.min.js"></script><!--ÏÂÔØµØÖ·£ºhttps://github.com/faisalman/ua-parser-js-->
+<!--ä»¥ä¸‹ä¸¤è¡Œä»£ç å»ºè®®æ”¾å…¥headé‡Œ-->
+<script src="ua-parser.min.js"></script><!--ä¸‹è½½åœ°å€ï¼šhttps://github.com/faisalman/ua-parser-js-->
 <link rel="stylesheet" type="text/css" href="show.ua.css">
 
-<!--¶àËµUAÏÔÊ¾|´Ë¶Îjs±ØÐë·ÅÔÚ¼ÓÔØembed.jsÖ®ºó£¬ÔËÐÐÏÔÊ¾ÆÀÂÛ´úÂëÖ®Ç°[start]-->
+<!--å¤šè¯´UAæ˜¾ç¤º|æ­¤æ®µjså¿…é¡»æ”¾åœ¨åŠ è½½embed.jsä¹‹åŽï¼Œè¿è¡Œæ˜¾ç¤ºè¯„è®ºä»£ç ä¹‹å‰[start]-->
 <script type="text/javascript">
 if (typeof DUOSHUO !== 'undefined')hookDUOSHUO_tp();
 else $('[src="http://static.duoshuo.com/embed.js"]')[0].onload=hookDUOSHUO_tp;
@@ -10,8 +10,9 @@ function hookDUOSHUO_tp(){
 	var _D_post=DUOSHUO.templates.post
 	DUOSHUO.templates.post=function (e,t){
 		var rs=_D_post(e,t);
-		if(e.agent&&/^Mozilla/.test(e.agent))rs=rs.replace(/<\/div><p>/,show_ua(e.agent)+'</div><p>');
-		return rs;
+		var agent=e.post.agent;
+                if(agent&&/^Mozilla/.test(agent))rs=rs.replace(/<\/div><p>/,show_ua(agent)+'</div><p>');
+                return rs;
 	}
 }
 function show_ua(string){
@@ -22,4 +23,4 @@ function show_ua(string){
 	return '<span class="this_ua platform '+sua.os.name+'">'+sua.os.name+' '+sua.os.version+'</span><span class="this_ua browser '+sua.browser.name+'">'+sua.browser.name+'|'+sua.browser.version+'</span>';
 }
 </script>
-<!--¶àËµUAÏÔÊ¾|´Ë¶Îjs±ØÐë·ÅÔÚ¼ÓÔØembed.jsÖ®ºó£¬ÔËÐÐÏÔÊ¾ÆÀÂÛ´úÂëÖ®Ç°[end]-->
+<!--å¤šè¯´UAæ˜¾ç¤º|æ­¤æ®µjså¿…é¡»æ”¾åœ¨åŠ è½½embed.jsä¹‹åŽï¼Œè¿è¡Œæ˜¾ç¤ºè¯„è®ºä»£ç ä¹‹å‰[end]-->
